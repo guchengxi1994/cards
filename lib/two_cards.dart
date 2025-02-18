@@ -2,9 +2,16 @@ import 'package:cards/child_wrapper.dart';
 import 'package:flutter/cupertino.dart';
 
 class TwoCards extends StatefulWidget {
-  const TwoCards({super.key, this.child1, this.child2});
+  const TwoCards(
+      {super.key,
+      this.child1,
+      this.child2,
+      required this.onChild1Pressed,
+      required this.onChild2Pressed});
   final Widget? child1;
   final Widget? child2;
+  final VoidCallback onChild1Pressed;
+  final VoidCallback onChild2Pressed;
 
   @override
   State<TwoCards> createState() => _TwoCardsState();
@@ -58,7 +65,7 @@ class _TwoCardsState extends State<TwoCards> {
                     });
                   },
                   onContentPressed: () {
-                    print("pressed ${notifier.value}");
+                    widget.onChild1Pressed();
                   },
                   child: widget.child1),
             ),
@@ -88,7 +95,7 @@ class _TwoCardsState extends State<TwoCards> {
                     });
                   },
                   onContentPressed: () {
-                    print("pressed ${notifier.value}");
+                    widget.onChild2Pressed();
                   },
                   child: widget.child2),
             ),

@@ -69,6 +69,8 @@ class _MyHomePageState extends State<MyHomePage> {
         title: Text(widget.title),
       ),
       body: TwoCards(
+        onChild1Pressed: () {},
+        onChild2Pressed: () {},
         child1: Center(
           child: Text("1"),
         ),
