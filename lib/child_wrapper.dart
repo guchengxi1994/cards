@@ -19,6 +19,7 @@ class ChildWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Material(
+      color: Colors.grey[100],
       borderRadius: BorderRadius.circular(20),
       elevation: isOnTop ? 10 : 4,
       child: GestureDetector(
